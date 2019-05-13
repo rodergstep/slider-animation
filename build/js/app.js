@@ -8,8 +8,6 @@ $(document).ready(function () {
     doAnimations($animatingElements);
   });
   $('#slider').slick({
-    autoplay: true,
-    autoplaySpeed: 7000,
     dots: false,
     fade: true,
     arrows: true
