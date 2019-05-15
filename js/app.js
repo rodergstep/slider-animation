@@ -30,7 +30,7 @@ $(document).ready(function () {
 
   // Inline popups
   $('#zoom-popups').magnificPopup({
-    delegate: 'a',
+    delegate: '.zoom-popup',
     removalDelay: 500, //delay removal by X to allow out-animation
     callbacks: {
       beforeOpen: function () {
@@ -39,6 +39,24 @@ $(document).ready(function () {
     },
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
+    $('.zoom-gallery').magnificPopup({
+      delegate: '.zoom-gallery-pic',
+      type: 'image',
+      closeOnContentClick: true,
+      closeBtnInside: false,
+      mainClass: 'mfp-with-zoom mfp-img-mobile',
+      image: {
+        verticalFit: true
+      },
+      zoom: {
+        enabled: true,
+        duration: 300, // don't foget to change the duration also in CSS
+        opener: function(element) {
+          return element.find('img');
+        }
+      }
+      
+    });
 
 });
 //# sourceMappingURL=app.js.map
